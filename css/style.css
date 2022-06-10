@@ -1,0 +1,1357 @@
+/* style.css */
+
+
+/* リンク先へ飛ぶときに、ゆっくりとスクロールする */
+/* ページ全体に適用されるプロパティ */
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    /* color: #ff6600; */
+    transition: 0.5s;
+}
+
+/* aタグに自動装飾される下線を無効化する */
+a:hover,
+a:active,
+a:focus {
+    text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Navigation Bar
+--------------------------------------------------------------*/
+/* ナビゲーションバーのプロパティ */
+#header {
+    /* 要素の位置を固定する */
+    position: fixed;
+
+    /* 要素の重なり順を最前面に指定する（数値が大きいほど前に出る） */
+    z-index: 10000;
+    
+    width: 100%;
+
+    /* ナビゲーションバーの背景を透明にする */
+    background-color: #ffffff00;
+
+    /* 要素のプロパティに変化が発生するとき、ゆっくりと変化するようにする */
+    transition: all 1s !important;
+}
+
+.navbar {
+    transition: all 1s;
+}
+
+/* リンクの間の空白を規定する */
+#header li {
+    padding: 0px 7px;
+}
+
+/* li要素に自動で付与される黒点を消す */
+#header ul {
+    list-style: none;
+}
+
+#header li a{
+    font-size: 20px;
+    transition: all 1s;
+    /* aタグに自動で付与される下線を消す */
+    text-decoration: none;
+}
+
+/* 画面左上のロゴのプロパティ */
+.logo {
+    font-size: 35px;
+    color: #ffffff !important;
+    transition: all 1s;
+
+    /* ロゴの左側の縦棒をロゴ付近に表示するために必要 */
+    position: relative;
+
+    /* ロゴの左側の縦棒とロゴとの間の空間 */
+    padding-left: 40px;
+}
+
+/* ロゴの左側の緑色の縦棒のプロパティ */
+.logo::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background-color:#ff6600;
+    top: 10px;
+    left: 30px;
+}
+
+.logo a:hover {
+    transition: all 1s;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    transition: all 1s;
+}
+
+.nav-link:hover {
+    transition: all 1s;
+}
+
+.nav-link a:hover {
+    color: #ff6600;
+}
+
+.nav-item:hover {
+    color: #ff6600;
+}
+
+
+
+
+/* スクロール後にナビゲーションバーの色を変化させる */
+header .scrolled{
+    /* color: #ffffff; */
+    /* background-color: rgb(255, 255, 255, 0.5) !important; */
+    transition-property: color;
+    transition-duration: 2s;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    transition: all 1s;
+}
+
+/* スクロール後に文字色を白くする */
+header .scrolled ul li a {
+    color: #ffffff !important;
+    transition: all 1s;
+}
+
+/* ロゴを変える */
+.scrolled .logo {
+    color: #ffffff !important;
+    transition: all 1s;
+}
+
+/* マウスを乗せたときの色を指定する(ページの最上点にいないときに適用される) */
+.scrolled a:hover {
+    color: #ff6600 !important;
+}
+
+
+/*--------------------------------------------------------------
+# Carousel
+--------------------------------------------------------------*/
+/* カルーセル内の画像の透明度を上昇させる */
+#intro img {
+    filter: brightness(40%);
+}
+
+
+/* カルーセルの表示位置を上に上げる */
+/* ※ 位置調整が初心者には難解過ぎるため、廃止 */
+/* .carousel-caption {
+    align-items: center;
+    position: absolute ;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+} */
+
+.carousel-caption {
+    padding: 0 0 25% 0;    
+}
+
+
+
+/* レイアウトが崩れだすタイミング 832px */
+
+/* カルーセルの表示文字のプロパティ */
+#intro h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+#intro p {
+    color: #fff;
+    margin-bottom: 35px;
+}
+
+#intro a {
+    color: #ffffff;
+}
+
+/* ボタンのプロパティ */
+.btn-get-started {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    border-radius: 20px;
+    /* top: calc(50% - .5em); */
+    /* right: 1rem; */
+    transition: all 1s;
+}
+
+.btn-get-started:hover {
+    background-color: #ffffff;
+    
+    /* ボタンにマウスオーバーしたとき、文字色を緑色にする */
+    color: #ff6600 !important;
+
+    transition: all 1s;
+
+    /* リンクの下線部を非表示にする */
+    text-decoration: none; 
+}
+
+.carousel-indicators {
+    /* インディケーターを少し上に移動させる */
+    bottom: 15%;
+}
+
+/* カルーセルの最前面に固定表示する文字 */
+/* .carousel-message { */
+    /* position: absolute; */
+    /* top: 200px; */
+    /* text-align: center; */
+    /* margin: 300px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* z-index: 500000000; */
+/* } */
+
+
+/* カルーセルのコントローラーの位置を固定する ※ ボタン直下のpadding影響を受けて上に移動しないようにするため */
+/* .carousel-control-prev, .carousel-control-next { */
+    /* position: absolute; */
+    /* top: 500px; */
+    /* z-index: 400; */
+    /* height: 100%; */
+/* } */
+
+
+
+/*--------------------------------------------------------------
+# main タグ
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# 特徴(Features) セクション
+--------------------------------------------------------------*/
+/* 背景の色および要素の周囲の空白を指定する */
+#features {
+    background-color: #000000;
+    padding: 20px 0 40px 0;
+}
+
+/* アイコンの色とサイズを指定する */
+#features .far, 
+#features .fas {
+    color: #ff6600;
+    font-size: 50px;
+    margin: 40px 0 20px 0;
+}
+
+/* h4要素の周りにマージンを指定 */
+#features h4 {
+    margin-bottom: 15px;
+}
+
+/* p要素の色を指定 */
+#features p {
+    color: #ffffff;
+}
+
+/* リンクの色を指定 */
+#features a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 1s;
+}
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# 会社概要
+--------------------------------------------------------------*/
+#about {
+    /* background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("/images/background/world.jpg") center top no-repeat fixed; */
+    /* no-repeat ->  background-repeat の設定値。画像を複製せずに1枚のみ表示する設定 
+     * 各設定値と効果は次の通り。
+     *   repeat-x: 画像が横にのみ複製される
+     *   repeat-y: 画像が縦にのみ複製される
+     * background-repeat のドキュメント: https://www.w3schools.com/cssref/pr_background-repeat.asp
+     */
+
+    
+    background: url("/images/background/world.jpg") center top no-repeat fixed;
+
+    background-size: cover;
+
+    padding: 40px 0 40px 0;
+    position: relative;
+}
+
+/* 背景の色を抑えるプロパティ（背景の透明度を高くし、目立たなくする） */
+#about::before {
+    content: '';
+    position: absolute;
+    
+    /* 位置の指定(以下の記述を省くと、対象にできなくなる) */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background: rgba(255, 255, 255, 0.80);
+
+    /* 重なり順を指定（説明文の要素よりも後ろ、背景よりも前になるように値を設定する） */
+    z-index: 5;
+}
+
+
+#about .container {
+    /* 以下の記述を省略すると、背景を目立たなくする効果が適用されなくなる */
+    position: relative;
+
+    /* 重なり順を最前面にする（値は #about::before の z-index の値よりも大きくする） */
+    z-index: 10;
+}
+
+#about .about-col {
+    background: #fff;
+
+    /* 両下端を丸く整形する */
+    border-radius: 0 0 4px 4px;
+
+    /* 背後に影を付ける */
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+#about .about-col .img {
+    position: relative;
+}
+
+
+#about .about-col .img img {
+    /* 画像の両上端を丸く整形する */
+    border-radius: 4px 4px 0 0;
+    height: 100%;
+}
+
+#about .about-col .icon {
+    /* 円のサイズを指定 */
+    width: 64px;
+    height: 64px;
+
+    /* アイコンが円の上端にくっつかないようにする */
+    padding-top: 8px;
+    
+
+    /* アイコンを横方向に中央寄せする */
+    text-align: center;
+
+    /* アイコンを中央に寄せる (これを適用しないと left: calc( 50% - 32px); が適用されないため、アイコンが左に寄ってしまう) */
+    position: absolute;
+
+    background-color: #ff6600;
+
+    /* アイコンの周囲を円形にする */
+    border-radius: 50%;
+
+    text-align: center;
+
+    /* 円の周囲に白い枠線を描く */
+    border: 4px solid #fff;
+    
+    /* アイコンの位置を中央に設定する */
+    left: calc( 50% - 32px);
+
+    /* アイコンの位置を写真と説明文との境界面に指定 (この記述が無いとアイコンが写真よりも下に配置される) */
+    bottom: -30px;
+
+    /* プロパティが変化するスピードを指定 (色の変化が滑らかになるため、色が突然変化する印象を無くすことができる。) */
+    transition: 0.3s;
+}
+
+#about .about-col i {
+    font-size: 32px;
+
+    /* アイコンの位置を円の真ん中に指定 */
+    line-height: 1.2;
+
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* 要素(写真と文章を含む)にマウスを置いたときのアイコンの背景を白にする */
+#about .about-col:hover .icon {
+    background-color: #fff;
+}
+
+/* 要素(写真と文章を含む)にマウスを置いたときのアイコンの色を緑にする */
+#about .about-col:hover i {
+    color: #ff6600;
+}
+
+/* タイトル部分のプロパティ */
+#about .about-col h2 {
+    color: #000;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0;
+    margin: 40px 0 12px 0;
+}
+
+/* タイトル(リンク) の色を黒にする(この記述を省くと、デフォルトCSSの影響で青となる) */
+#about .about-col h2 a {
+    color: #000;
+
+    /* 色の変化速度を指定する(この記述を省くと、色が唐突に変化する印象になる) */
+    transition: .3s;
+}
+
+/* タイトル(マウスオーバー時)のプロパティ */
+#about .about-col h2 a:hover {
+    color: #ff6600;
+    
+    /* 下線部を非表示にする */
+    text-decoration: none;
+
+    /* 色の変化速度を指定する(この記述を省くと、色が唐突に変化する印象になる) */
+    transition: .3s;
+}
+
+/* 説明文のプロパティ */
+#about .about-col p {
+    font-size: 14px;
+    
+    /* 行間を広げる (この記述を省くと、少し読みづらくなる) */
+    line-height: 24px;
+    
+    color: #333;
+
+    /* margin-bottom: 0; */
+
+    /* 左右と下に空間を設ける */
+    padding: 0 20px 20px 20px;
+}
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# サービス
+--------------------------------------------------------------*/
+#services {
+    background: #fff;
+    background-size: cover;
+    padding: 85px 0 40px 0;
+}
+
+/* 横１行に並ぶ要素のプロパティ */
+#services .row {
+    /* 要素を中央に揃える */
+    justify-content: center;
+
+    /* 以下の記述を省くとページ右側に真っ白な縦長空白が生じる */
+    width: 100vw;
+}
+
+.section-header h3 {
+    font-size: 32px;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-header h3::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.section-header h3::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #ff6600;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.section-header p {
+    text-align: center;
+    padding-bottom: 30px;
+    color: #333;
+    font-size: 20px;
+}
+
+#services .box {
+    margin: 25px 20px;
+}
+
+#services .far, 
+#services .fas {
+    display: block;
+    color: #ff6600;
+    font-size: 40px;
+
+    /* アイコンを説明分の左側に表示するため */
+    float: left;
+    
+}
+
+
+
+#services a {
+    color: #000000;
+    transition: .5s;
+    text-decoration: none;
+}
+
+#services a:hover {
+    color: #ff6600;
+    transition: .5s;
+}
+
+/* サービスのタイトルのプロパティ */
+#services h4 {
+    font-weight: 700;
+    margin-left: 75px;
+}
+
+/* サービスの詳細説明のプロパティ */
+#services .row p {
+    margin-left: 75px;
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# 無料相談
+--------------------------------------------------------------*/
+/* 無料相談のセクション全体にかかるプロパティ */
+#free-consultation {
+    /* 背景画像を指定し、グラデーション効果を付与する */
+    background: linear-gradient(rgba(0, 77, 54, 0.5), rgba(0, 181, 0, 0.5)), url(/images/background/free-consultation.jpg) fixed center center;
+    /*
+     * linear-gradient -> グラデーション効果を付与する。第一引数にグラデーションの方向を指定できる。例えば to right は左から右へと色が変化する
+     * (今回は第一引数を省略しているため、デフォルトの to bottom が適用されている)
+     * linear-gradient のドキュメント: https://www.w3schools.com/css/css3_gradients.asp 
+     * 
+     * fixed        -> background-attachment の設定値。scroll にすると画像がスクロールと連動するため、視覚的には背景が固定されているように映る
+     * center(1つ目) -> background-position の第一引数。背景画像の縦方向の位置指定を行う(設定可能値 -> top / center / bottom )
+     * center(2つ目) -> background-position の第二引数。背景画像の横方向の位置指定を行う(設定可能値 -> left / center / right )
+     * background のドキュメント: https://creive.me/archives/16138/#background-2
+     */
+    
+
+    background-size: cover;
+    padding: 30px 0;
+}
+
+#free-consultation h2, #free-consultation p {
+    color: #ffffff;
+    padding: 5px;
+}
+
+#free-consultation p {
+    font-size: 20px;
+}
+
+/* ボタンのプロパティ */
+#free-consultation .btn-free-consultation {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #ff6600;
+    border-radius: 20px;
+    border-color: #ff6600;
+    transition: all 1s;
+}
+
+#free-consultation .btn-free-consultation:hover {
+    background-color: #ff6600;
+    color: #ffffff !important;
+    transition: all 1s;
+    /* 下線部を消すため */
+    text-decoration: none; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# 我々の強み(skills)
+--------------------------------------------------------------*/
+/* 「我々の強み」セクションの親要素に適用されるプロパティ */
+#skills .container {
+    /* セクションの周囲に空間を空ける(主に上下の空間を調整) */
+    margin: 70px auto 40px auto;
+}
+
+/* プログレスバーのサイズのプロパティ */
+#skills .progress {
+    /* 各プログレスバーの幅を大きくする */
+    height: 35px;
+
+    /* 各プログレスバー同士の空間を空ける */
+    margin-bottom: 10px;
+}
+
+/* 項目名(~者) のプロパティ */
+#skills .progress .skill {
+    /* 項目名を左寄せ */
+    text-align: left;
+
+    font-size: 18px;
+
+    /* 項目名の左側に空間を空ける */
+    margin-left: 20px;
+
+    /* 行の高さの設定（これを設定しないと、アニメーション開始後に文字がガクンと下に下がる） */
+    line-height: 1px;
+}
+
+/* パーセンテージの数値のプロパティ */
+#skills .progress .skill .val {
+    /* 数値を右端に寄せる */
+    float: right;
+
+    /* 数値の右側に空間を空ける */
+    margin-right: 20px;
+
+    /* フォントを通常に設定（デフォルトだと斜体になる） */
+    font-style: normal;
+}
+
+/* プログレスバーの変化(アニメーション)のプロパティ */
+#skills .progress-bar {
+    /* プログレスバーの幅の初期値を指定する (※ これを指定しないと、はじめからプログレスバーが伸び切ってしまった状態になる) */
+    width: 1px;
+
+    /* プログレスバーの変化が完了するまでの時間を指定する */
+    transition: 1.6s;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# 実績(facts)
+--------------------------------------------------------------*/
+
+#facts {
+    /* 背景画像とそのプロパティを指定する */
+    background: url("../images/background/skyscrapers.jpg") center top no-repeat fixed;
+
+    /* 要素にフィットするサイズで表示する(この記述がないと画像サイズのまま表示される) */
+    background-size: cover;
+
+    padding: 100px 0 60px 0;
+    position: relative;
+}
+
+/* 背景画像に白いフィルターをかける */
+#facts::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 9;
+}
+
+#facts .container {
+    /* 以下の記述を施すことで、後述の z-index が有効となる */
+    position: relative;
+
+    /* #facts::before で指定した z-index の値よりも大きく(重なり順は後ろ側)設定する */
+    z-index: 10;
+}
+
+/* 表示している数値のプロパティ */
+#facts .counters span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    /* display: block; */
+    color: #ff6600;
+}
+
+#facts .unit {
+    margin-left: 5px;
+    font-size: 25px !important;
+    color: #111 !important;
+}
+
+#facts .counters p {
+    /* スマホ表示時に２行で表示された際、下段の要素との間に間隔が空くようにする */
+    margin: 0 0 40px 0;
+
+    font-size: 20px;
+    color: #111;
+}
+
+#facts .facts-img {
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# 導入事例(projects)
+--------------------------------------------------------------*/
+#projects {
+    padding: 85px 0 0px 0;
+
+    /* ↓ filtrizr のエフェクトをかき消してしまうため、background-color は付与しない */
+    /* background-color: #f4f4f4; */
+
+    /* 画像の表示数に応じてheightを自動で調節する (※この記述がないと、画像が次のセクションに重なってしまう。) */
+    height: auto;
+}
+
+/* 表示する項目を切り替えるための要素のプロパティ */
+#projects .filter-controler {
+    /* フィルターの選択ボタンのプロパティ */
+    text-align: center;
+}
+
+#projects .filter-controler li {
+    cursor: pointer;
+    margin: 15px 15px 15px 0;
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #4f4f4f;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: solid #ff6600;
+    border-width: 2px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+#projects .filter-controler li:hover {
+    background-color: #ff6600;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+#projects .filtr-item {
+    /* padding: 0px -> col-xx-x の影響で左右に空白ができるのを防ぐ ※この記述がないと、マウスが画像に当たりきっていないのに、情報が表示されるように成る */
+    /* hover判定が甘いが、一旦以下の実装にしておく */
+    padding: 10px;
+}
+
+#projects .filtr-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    transition: 0.6s;
+}
+
+#projects .filtr-item:hover img {
+    box-shadow: 0px 4px 4px #000000;
+    opacity: 0.2 !important;
+    transition: 0.6s;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+#projects .project-info {
+    width: 100%;
+    opacity: 0;
+    /* 下記の記述を省くと、ホバー時に出現する要素が顔写真直下に表示されるようになる */
+    position: absolute;
+
+    /* ホバー時に出現するプロジェクト情報が写真中央に配置されるように調整する */
+    bottom: 0;
+    top: 20px;
+    left: 0px;
+    right: 0;
+
+    transition: 0.7s;
+}
+
+#projects .project-info:hover {
+    opacity: 1;
+    transition: 0.7s;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+#projects .project-info .project-info-content {
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+#projects .project-info-content:hover {
+    margin-top: 0;
+    transition: margin 0.4s;
+    overflow: hidden;
+}
+
+#projects .project-info a {
+    text-decoration: none;
+}
+
+/* 企業名のプロパティ */
+#projects .project-info span {
+    font-size: 12px;
+    color:#6f6f6f;
+
+    display: block;
+
+    /* 右下に固定表示 */
+    margin-left: 30px;
+    margin-bottom: 25px;
+
+    /* [後ほど削除] 以下を使用すると、アニメーションが適用されなくなった */
+    bottom: 0px;
+    /* ※rightの代わりに left を使用すると、企業名が長くなった時に要素が右に伸びてしまうため位置がずれる */
+    left: 30px;
+}
+
+#projects .project-info h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000; 
+    
+    margin: 10px 0;
+    
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+#projects .project-info h4:hover,
+#projects .project-info h5:hover {
+    color: #ff6600 !important;
+    transition: 0.3s;
+}
+
+/* プロジェクト詳細情報のプロパティ */
+#projects .project-info p {
+    font-size: 14px;
+    color: #000000;
+
+    /* 空白を作る(左右: 30px) */
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+#projects .project-info .more-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#projects .project-info .more-info h5 {
+    width: 40%;
+    margin: 5px auto 0 auto;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# チームメンバー (役員紹介)
+--------------------------------------------------------------*/
+#team {
+    background: #fff;
+    /* ナビゲーションバーの役員紹介をクリックした際、「役員紹介」の文字が適切に表示されるように、上部の空間だけ多めにとっている */
+    padding: 85px 0 60px 0;
+}
+
+/* 顔写真にマウスを乗せたときに現れる要素のプロパティ */
+#team .member {
+    /* 名前と役職名を中央に配置する */
+    text-align: center;
+    
+    /* 画面サイズが小さくなった時、直下の写真との間に空白を設けるため */
+    margin-bottom: 20px;
+
+    /* html上で画像へのリンクが切れた際、ブラウザ上で異変が分かるように、写真裏に黒の背景色を指定しておく。 */
+    background: #000;
+    
+    /* 黒い透明背景の位置を顔写真と丁度に合わせるため */
+    position: relative;
+}
+
+#team .member .member-info {
+    /* 通常時には氏名等の情報が非表示になるようにする */
+    opacity: 0;
+
+    /* flexbox を使用可能にする ※以下の記述を省くと、judtify-content と align-items が適用されない */
+    display: flex;
+
+    /* 氏名情報の横軸位置を中央に調整 */
+    justify-content: center;
+
+    /* 氏名情報の縦軸位置を中央に調整  */
+    align-items: center;
+
+    /* 下記の記述を省くと、ホバー時に出現する要素が顔写真直下に表示されるようになる */
+    position: absolute;
+
+    /* ホバー時に出現する情報が顔写真中央に配置されるように調整する */
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    /* マウスオーバー解除時に、表示された文字が消えるまでに要する時間 */
+    transition: 0.2s;
+}
+
+/* ホバー開始時および終了時に氏名情報がフェードイン&フェードアウトするような効果を適用する */
+#team .member .member-info-content {
+    margin-top: -50px;
+    transition: margin 0.2s;
+}
+
+/* 顔写真にマウスを乗せたときのプロパティ */
+#team .member:hover .member-info {
+    /* 背景の色を透明の黒に指定 */
+    background: rgba(0, 0, 0, 0.7);
+    
+    /* 表示する情報の透明度を指定する ※下記の記述を省くと、氏名などの情報が表示されなくなる */
+    opacity: 1;
+
+    /* マウスを要素上に乗せてから、プロパティ適用完了までにかかる時間を設定 */
+    transition: 0.4s;
+}
+
+/* 役員の情報に関する記載のプロパティ */
+#team .member:hover .member-info-content {
+    /* 役員の情報の初期位置を上方に指定(このプロパティこの記述を省くとマウスオーバーしたときに上から下に現れる効果が消失する) */
+    margin-top: 0;
+
+    /* margin の変化速度のみ指定する */
+    transition: margin 0.4s;
+}
+
+/* 「名前」のプロパティ */
+#team .member h4 {
+    /* フォントを太くする */
+    font-weight: 700;
+
+    /* 名前と役職名の間に空間を設ける */
+    margin-bottom: 2px;
+
+    /* フォントの大きさを小さくする(デフォルトCSSのフォントが少し大き過ぎるため) */
+    font-size: 18px;
+    color: #fff;
+}
+
+/* 「役職名」のプロパティ */
+#team .member span {
+    /* display: block; */
+    font-size: 13px;
+    color: #fff;
+}
+
+/* 「SNSアイコン」のプロパティ */
+#team .member .social {
+    /* 役職名との間に空間を設ける */
+    margin-top: 15px;
+}
+
+/* 「SNSアイコン」のプロパティ */
+#team .member .social a {
+    /* transition: none; */
+    color: #fff;
+}
+
+/* マウスオーバー時の「SNSアイコン」のプロパティ */
+#team .member .social a:hover {
+    color: #ff6600;
+}
+
+/* 「SNSアイコン」のプロパティ */
+#team .member .social i {
+    font-size: 18px;
+
+    /* アイコン同士の間に空間を設ける */
+    margin: 0 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+    問い合わせ (Contact)
+--------------------------------------------------------------*/
+#contact {
+    padding: 60px 0;;
+}
+
+#contact .contact-info {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#contact .contact-info i {
+    font-size: 48px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #ff6600;
+}
+
+#contact .contact-info address,
+#contact .contact-info p {
+    margin-bottom: 0;
+    color: #000;
+}
+
+/* 各問い合わせ先情報のプロパティ */
+#contact .contact-info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #999;
+}
+
+#contact .contact-info a {
+    color: #000;
+    transition: .5s;
+}
+
+
+#contact .contact-info a:hover {
+    color: #ff6600;
+    transition: .5s;
+}
+
+/* アドレスや電話番号直下にマージンを入れる */
+#contact .contact-address,
+#contact .contact-phone,
+#contact .contact-email {
+    margin-bottom: 20px;
+}
+
+/* メッセージ送信が完了したときに表示されるメッセージ */
+#contact .form #sendmessage {
+    color: #ff6600;
+    border: 1px solid #ff6600;
+    display: none;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#contact .form #errormessage {
+    color: red;
+    display: none;
+    border: 1px solid red;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* showクラス(jsによってappend)のプロパティ */
+#contact .form #sendmessage.show,
+#contact .form #errormessage.show,
+#contact .form .show {
+    display: block;
+}
+
+#contact .form .validation {
+    color: red;
+    display: none;
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#contact .form input,
+#contact .form textarea {
+    padding: 10px 14px;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 15px;
+}
+
+/* 送信ボタンのプロパティ */
+#contact .form button {
+    background: #ff6600;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+/* 送信ボタン(hover)のプロパティ */
+#contact .form button:hover {
+    background: #c53b00;
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# フッター
+--------------------------------------------------------------*/
+#footer {
+    background: #000;
+    padding: 30px 0 30px 0;
+    color: #eee;
+    font-size: 14px;
+}
+
+#footer a {
+    color: #ffffff;
+}
+
+#footer .footer-top h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+#footer .footer-top h4::before,
+#footer .footer-top h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+}
+
+#footer .footer-top h4::before {
+    right: 0;
+    background: #555;
+}
+
+#footer .footer-top h4::after {
+    background: #ff6600;
+    width: 60px;
+}
+
+#footer .footer-top .footer-links {
+    margin-bottom: 30px;
+}
+
+/* ul の標準cssを打ち消すため */
+#footer .footer-top .footer-links ul {
+    list-style: none;
+    /* 左側に空間をつくらないようにする */
+    padding: 0;
+    margin: 0;
+}
+
+#footer .footer-top .footer-links ul li {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+    color: #ff6600;
+}
+
+/* 右矢印アイコンの右側に空間をつくる */
+#footer .footer-top .footer-links ul i {
+    padding-right: 8px;
+    color: #ddd;
+}
+
+
+#footer .footer-top .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #333;
+    color: #eee;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+    background: #ff6600;
+    color: #fff;
+}
+
+#footer .footer-top .footer-newsletter {
+    margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-newsletter input[type="email"] {
+    border: 0;
+    padding: 6px 8px;
+    width: 65%;
+}
+
+#footer .footer-top .footer-newsletter input[type="submit"] {
+    background: #ff6600;
+    border: 0;
+    width: 35%;
+    padding: 6px 0;
+    text-align: center;
+    color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#footer .footer-top .footer-newsletter input[type="submit"]:hover {
+    background: #c53b00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# 画面サイズが 767px 以下になったときに適用されるcss
+--------------------------------------------------------------*/
+@media screen and (max-width: 767px) {
+    /* ナビゲーションバーのロゴのプロパティ */
+    .logo {
+        font-size: 30px;
+        padding-left: 12px;
+    }
+
+    .logo::before {
+        content: '';
+        top: 10px;
+        left: -2px;
+    }
+
+    /* ハンバーガーメニュークリック時に表示されるナビゲーションバーのプロパティ */
+    #header {
+        background-color: #00000066;
+    }
+
+
+    /* カルーセルのプロパティ */
+    .carousel-caption {
+        padding: 0 0 10% 0;
+    }
+
+    #intro h2 {
+        font-size: 20px !important;
+    }
+
+
+
+    /* 実績(facts)
+    ----------------- */
+    #facts .unit {
+        font-size: 20px !important;
+    }
+
+    #facts .client-number {
+        font-size: 38px !important;
+    }
+
+
+
+    /* フッター(footer)
+    ----------------- */
+    #footer .footer-contact {
+        margin-bottom: 30px;
+    }
+
+
+}

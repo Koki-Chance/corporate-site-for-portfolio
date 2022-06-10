@@ -1,0 +1,4 @@
+# フォームを送信すると「このページは動作していません」というエラーメッセージが表示されてしまう問題を解決するために、.htaccess は作成された
+<ifModule mod_headers.c>
+Header always set X-XSS-Protection "0"
+</ifModule>
