@@ -346,7 +346,6 @@ header .scrolled ul li a {
 #about .about-col .img img {
     /* 画像の両上端を丸く整形する */
     border-radius: 4px 4px 0 0;
-    height: 100%;
 }
 
 #about .about-col .icon {
